@@ -1,40 +1,147 @@
-*{
-    margin: 0px;
-    padding: 0px;
+/* General Reset & Body Styling */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-#fat,#thin,#normal{
-    height: 300px;
-    visibility: hidden;
-    position: absolute;
-    right: 0px;
-    top: 300px;
-    transition: .5s ease-in-out;
-    
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
 }
-body{
-    background-image: url(cool-background.png);
+
+/* Card Layout */
+.card {
+    display: flex;
+    flex-direction: column;
+    max-width: 850px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
 }
-body div input{
-    height: 40px;
-    width: 300px;
-    margin: 5px;
-    padding: 0px 5px;
+
+/* Wrappers */
+.calculator-wrapper,
+.result-wrapper {
+    padding: 2.5rem;
+    flex: 1;
 }
-#bt{
-    height: 40px;
-    width: 300px;
-    margin: 5px;
+
+.calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.result-wrapper {
+    background-color: #3B5998; /* A deep, modern blue */
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Typography */
+h2 {
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 2.5rem;
+    font-size: 1rem;
+}
+
+/* Form Elements */
+input {
+    width: 100%;
+    padding: 14px 18px;
+    margin-bottom: 1.2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3B5998;
+}
+
+button {
+    width: 100%;
+    padding: 14px 18px;
     border: none;
-    background-color:rgb(15, 28, 112) ;
-    border: 2px white solid;
-    color: WHITE;
-    transition: 0.4s ease-in-out;
+    border-radius: 10px;
+    background-color: #3B5998;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-#bt:hover{
+
+button:hover {
+    background-color: #324a7e;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    background-color: #a9a9a9;
+    cursor: not-allowed;
+    transform: translateY(0);
+}
+
+/* Result Display */
+.bmi-gauge {
+    position: relative;
+    height: 12px;
+    background: linear-gradient(to right, #f1c40f, #2ecc71, #e74c3c);
+    border-radius: 6px;
+    margin: 2rem 0;
+}
+
+.bmi-pointer {
+    position: absolute;
+    top: -6px;
+    left: 0;
+    width: 24px;
+    height: 24px;
     background-color: white;
-    color: rgb(15, 28, 112);
+    border-radius: 50%;
+    border: 4px solid #3B5998;
+    transform: translateX(-50%);
+    transition: left 0.5s ease-out;
 }
-body div{
-    margin: 300px 0px 0px 400px;
+
+#result-text {
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+#result-category {
+    font-size: 1.2rem;
+    font-weight: 300;
+    min-height: 30px;
+    margin-top: 0.5rem;
+}
+
+/* Responsive Design */
+@media (min-width: 800px) {
+    .card {
+        flex-direction: row;
+    }
 }

@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI</title>
+    <title>Modern BMI Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-        <h2 style="color: white;margin-left: 70px;">BMI calculator</h2>
-        <input id="name" type="text" placeholder="Enter your name"><br>
-        <input id="wt" type="number" placeholder="Enter your weight(in kgs)"><br>
-        <input id="ht" type="number" placeholder="Enter your height (in cm)"><br>
-        <button id="bt">Get BMI</button><br>
-        <h1 id="result" style="color: white;">Hello</h1>
-        <img id="fat" src="https://img.freepik.com/free-vector/overweight-man-cartoon-character_1308-134504.jpg" alt="Fat person image">
-        <img id="thin" src="https://static.vecteezy.com/system/resources/previews/009/493/310/non_2x/a-thin-red-haired-man-with-his-hands-on-his-waist-illustration-in-a-flat-cartoon-style-vector.jpg" alt="Thin person image">
-        <img id="normal" src="https://img.freepik.com/premium-vector/vector-bearded-person-giving-thumbs-up-expression-flat-design-style-vector-illustration_1062857-1431.jpg" alt="Normal person imagme">
+    <div class="card">
+        <div class="calculator-wrapper">
+            <h2>BMI Calculator</h2>
+            <p class="subtitle">Enter your details below to get your BMI result.</p>
+            <form id="bmi-form">
+                <input id="name" type="text" placeholder="Your Name" required><br>
+                <input id="wt" type="number" placeholder="Weight (kg)" inputmode="decimal" required><br>
+                <input id="ht" type="number" placeholder="Height (cm)" inputmode="decimal" required><br>
+                <button id="bt" type="submit">Calculate BMI</button><br>
+            </form>
+        </div>
+        <div class="result-wrapper">
+            <h3 id="result-text">Your Result</h3>
+            <div class="bmi-gauge">
+                <div class="bmi-gauge-bar"></div>
+                <div id="bmi-pointer" class="bmi-pointer"></div>
+            </div>
+            <p id="result-category"></p>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
