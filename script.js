@@ -33,7 +33,7 @@ form.addEventListener("submit", (e) => {
         } else {
             const heightInMeters = height / 100;
             const bmi = weight / (heightInMeters ** 2);
-            resultText.innerText = `Your BMI is ${bmi.toFixed(1)}`;
+            resultText.innerText = `${name} Your BMI is ${bmi.toFixed(1)}`;
 
             let category = "";
             if (bmi < 18.5) {
